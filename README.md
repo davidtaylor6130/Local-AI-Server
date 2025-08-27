@@ -1,6 +1,6 @@
 # 🧠📦 Local LLM NAS
 
-> **Pre‑alpha — just getting started.** This repo is the scaffolding for a private, docker‑native AI platform that indexes/searches your knowledge base, runs on‑NAS image generation, and orchestrates a small fleet of work‑safe agents — all secured behind your VPN.
+> **Pre‑alpha — just getting started.** This repo is the scaffolding for a private, docker‑native AI platform that indexes/searches your knowledge base, runs on‑NAS image generation, and orchestrates a small fleet of agents — all secured behind your VPN.
 
 <p align="center">
   <img alt="Status" src="https://img.shields.io/badge/status-pre--alpha-ff9800">
