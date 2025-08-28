@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local-ai-server/protocol/task.schema.json",
+  "title": "Task",
+  "type": "object",
+  "required": ["agent", "model", "priority", "payload"],
+  "properties": {
+    "id": { "type": "string" },
+    "agent": { "type": "string" },
+    "model": { "type": "string" },
+    "priority": { "enum": ["high", "low"] },
+    "payload": { "type": "object", "additionalProperties": true }
+  }
+}
+

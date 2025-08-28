@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+    volumes:
+      - ollama_models:/root/.ollama
+
+  queue:
+    build: ./services/queue
+    container_name: queue
+    environment:
+      - QUEUE_PORT=${QUEUE_PORT:-7000}
+    ports:
+      - "${QUEUE_PORT:-7000}:7000"
+    depends_on: []
+
+
+  rag-agent:
+    build: ./agents/rag
+    container_name: rag-agent
+    environment:
+      - OLLAMA_URL=http://ollama:11434
+      - RAG_DB_PATH=/data/rag.db
+      - RAG_EMBED_MODEL=${RAG_EMBED_MODEL:-bge-m3}
+      - RAG_LLM_MODEL=${RAG_LLM_MODEL:-mistral}
+    volumes:
+      - ./knowledge:/knowledge:ro
+      - rag_db:/data
+    depends_on:
+      - ollama
+
+
+  dashboard:
+    build: ./services/dashboard
+    container_name: dashboard
+    environment:
+      - PORT=${DASHBOARD_PORT:-3000}
+      - QUEUE_URL=http://queue:7000
+      - AGENTS=${AGENTS:-rag}
+      - AVG_JOB_SECONDS=${AVG_JOB_SECONDS:-30}
+      - AGENT_META=${AGENT_META}
+    ports:
+      - "${DASHBOARD_PORT:-3000}:3000"
+    depends_on:
+      - queue
+
+
+volumes:
+  ollama_models: {}
+  rag_db: {}

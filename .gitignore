@@ -1,0 +1,30 @@
+# General
+.DS_Store
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.vscode/
+.idea/
+
+# Python build
+*.egg-info/
+dist/
+build/
+
+# C++ build
+cmake-build*/
+_build/
+build*/
+bin/
+obj/
+
+# Local data
+.env
+.rag_db/
+data/rag_db/
+
+# Docker
+*.pid
+
