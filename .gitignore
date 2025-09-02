@@ -28,3 +28,4 @@ data/rag_db/
 # Docker
 *.pid
 
+/services/dashboard/web/node_modules
