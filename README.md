@@ -35,7 +35,7 @@
 
 ### Architecture at a glance (plain English)
 
-1. **Your Laptop/PC** connects over **VPN** to the NAS.
+1. **Your Laptop/PC** connects over **VPN** to the NAS/HomeServer.
 2. The **NAS** runs everything in **Docker**: a search/index stack, an LLM queue, lightweight agents, and Stable Diffusion (GPU).
 3. A **Central Data Pool** is mounted into each container so every tool sees the same files.
 4. You **drop files** in `/pool` → the **Indexer** chunks/embeds them → the **Vector DB** stores them for fast search.
@@ -114,18 +114,6 @@ flowchart TD
 ├─ backups/                   # restic/borg archives
 └─ logs/
 ```
-
----
-
-## 🧱 Hardware Guide
-
-**Reference build (yours):**
-
-* **Chassis/NAS:** UGREEN DXP8800
-* **CPU:** Intel Core i5
-* **Memory:** 128 GB RAM
-* **GPU:** NVIDIA RTX 4000 SFF (Ada)
-* **Storage:** Your primary pool mounted at `/pool` (NVMe cache + HDD array recommended)
 
 ---
 
