@@ -150,6 +150,3 @@ flowchart TD
 * [ ] **Admin UI (basic)**: health, logs, reindex button
 * [ ] **Security baseline**: VPN only, per‑agent tokens, read‑only mounts by default
 * [ ] **Docs**: onboarding, contribution guide, coding standards
-
-
-https://aclanthology.org/2024.emnlp-main.15.pdf
