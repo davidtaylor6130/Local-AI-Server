@@ -23,7 +23,6 @@
 * **Unified data lake:** One central pool mounts into every container for read/write.
 * **100% containerized:** Each section/service runs in its own Docker container.
 * **Blazing fast search:** RAG pipeline with a vector DB + metadata index across notes, code, PDFs, and binary assets.
-* **Reference build (this repo):** UGREEN DXP8800 • Intel Core i5 • 128 GB RAM • NVIDIA RTX 4000 SFF.
 * **On‑NAS diffusion:** GPU‑accelerated Stable Diffusion for renders, thumbnails, and concept art.
 * **Agent fleet:** 12 purpose‑built agents for documentation, SEO, content outlines, announcement drafting, daily reflection, asset organization, and internal ops.
 * **Event‑driven:** Queue + pub/sub glue so agents trigger on commits, new assets, or scheduled cadences.
